@@ -15,10 +15,18 @@ def pipfilter(rawdata):
     for line in filelines:
         try:
             drive = driveregxc.search(line).group()
-            usernamepart = userregxc1.search(line).group()
-            user=userregxc2.search(usernamepart[5:]).group()
-            newline.append(line.replace(drive, "<d>:").replace(user,"<u>"))
+            line=line.replace(drive,"<d>:")
+            logger.info("drive letter found and replaced")
         except Exception as e:
             logger.exception(e)
-            newline.append(line)
+            logger.info("drive letter not found")
+        try:
+            usernamepart = userregxc1.search(line).group()
+            user=userregxc2.search(usernamepart[5:]).group()
+            line=line.replace(user,"<u>")
+            logger.info("Username found and replaced")
+        except Exception as e:
+            logger.exception(e)
+            logger.info("Username not found")
+        newline.append(line)
     return "\r".join(newline)

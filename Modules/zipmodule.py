@@ -16,10 +16,10 @@ def createzip(zippassword,zipfilename,filepath,filename,destination):
 def extractzip(zippassword,zipfilename):
     try:
         with pyzipper.AESZipFile(zipfilename) as zf:
-            return (zf.read(zf.filelist[0].filename,bytes(str(zippassword),'utf-8')),zf.filelist[0].filename)
+            return (zf.read(zf.filelist[0].filename,bytes(str(zippassword),'utf-8')),zf.filelist[0].filename,True)
     except Exception:
         logger.exception(Exception)
         logger.info(zipfilename+" extract failed")
-        return "file extract failed"
+        return ("","file extract failed",False)
 
 

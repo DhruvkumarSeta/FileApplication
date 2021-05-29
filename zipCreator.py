@@ -10,10 +10,11 @@ while(True):
         logger.info(textfilename+" found")
         epochtimestamp=tf.getepoch()
         zipname=tf.getformattedtime(epochtimestamp,zac.timestringformat)
-        zm.createzip(epochtimestamp,zipname,zac.textfilepath,textfilename,osop.dircreateexists(zac.zipdestinationfolder))
-        logger.info(zipname + " created")
-        osop.delfile(zac.textfilepath+textfilename)
-        logger.info(zac.textfilepath+textfilename+" deleted")
+        if (zm.createzip(epochtimestamp,zipname,zac.textfilepath,textfilename,osop.dircreateexists(zac.zipdestinationfolder))):
+            logger.info(zipname + " created")
+            osop.delfile(zac.textfilepath + textfilename)
+        else:
+            logger.critical("zip creation failed")
     else:
         logger.info(textfilename)
         time.sleep(30)
