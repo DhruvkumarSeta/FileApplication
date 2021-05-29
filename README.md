@@ -60,6 +60,10 @@ field name to look for is "file_path" : "C:\Users\john\xyz" should be converted 
     contain file which is configuration as wwell as constant being used by both application
   
   5. sample log file([logfile.log](https://github.com/DhruvkumarSeta/FileApplication/files/6564441/logfile.log)) atteched which is created at home directory of code.
+ 
+  6. Diagram Folder
+ 
+    contain diagram files.
   
 
   
