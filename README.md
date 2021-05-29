@@ -63,7 +63,7 @@ field name to look for is "file_path" : "C:\Users\john\xyz" should be converted 
  
   6. Diagram Folder
  
-    contain diagram files.
+    contains diagram files.
   
 
   
