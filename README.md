@@ -35,6 +35,9 @@ field name to look for is "file_path" : "C:\Users\john\xyz" should be converted 
   2. pyzipper(pip install pyzipper)
   
   **Documentation**
+ 
+ ![FileAppFlowDiagram](https://user-images.githubusercontent.com/84989851/120067179-df119c00-c097-11eb-83dc-c1ffadbed541.png)
+
   
   1.zipCrator.py
   
